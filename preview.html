@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eramarindo Corporation - Strategic Holding, Investment and Project Management Partner.">
+  <title>Eramarindo Corporation | Sovereign. Powerful. Global.</title>
+
+  <style>
+    :root {
+      --black: #090b0d;
+      --gold: #c6a45c;
+      --white: #f7f6f2;
+      --muted: #a9a9a9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(9,11,13,.96);
+      border-bottom: 1px solid rgba(198,164,92,.3);
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--gold);
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    nav { display: flex; flex-wrap: wrap; gap: 22px; }
+
+    nav a {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover { color: var(--gold); }
+
+    .hero {
+      min-height: 650px;
+      padding: 120px 8%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        linear-gradient(90deg, rgba(9,11,13,.98), rgba(9,11,13,.72)),
+        radial-gradient(circle at 80% 35%, #51401f, #090b0d 60%);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: 4px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 22px 0;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+    }
+
+    h1 span { color: var(--gold); }
+
+    .hero p {
+      max-width: 680px;
+      color: #d0d0d0;
+      font-size: 18px;
+    }
+
+    .cta {
+      display: inline-block;
+      width: fit-content;
+      margin-top: 35px;
+      padding: 13px 25px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      letter-spacing: 1px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .cta:hover { background: var(--gold); color: var(--black); }
+
+    section { padding: 85px 8%; }
+
+    .section-label {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      margin: 12px 0 25px;
+      line-height: 1.2;
+    }
+
+    .intro { max-width: 850px; color: #c6c6c6; }
+
+    .portfolio {
+      background: #111518;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 35px;
+    }
+
+    .item {
+      min-height: 155px;
+      padding: 25px;
+      border: 1px solid #343434;
+      background: #15191b;
+    }
+
+    .item h3 {
+      color: var(--gold);
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .item p { color: var(--muted); font-size: 13px; }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .principles strong {
+      display: block;
+      color: var(--gold);
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    footer {
+      padding: 35px 8%;
+      border-top: 1px solid #343434;
+      color: var(--muted);
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    @media (max-width: 700px) {
+      header { align-items: flex-start; flex-direction: column; }
+      nav { gap: 12px; }
+      .hero { min-height: 550px; padding-top: 85px; }
+      section { padding: 65px 7%; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="brand" href="#home">ERAMARINDO</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#business">Business</a>
+      <a href="#investment">Investment</a>
+      <a href="#governance">Governance</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="eyebrow">Eramarindo Corporation</div>
+      <h1>Building Strategic Value.<br><span>Shaping the Future.</span></h1>
+      <p>
+        Strategic Holding, Investment & Fund Management,
+        and Project Management Partner supporting strategic
+        initiatives and long-term asset development.
+      </p>
+      <a class="cta" href="#about">Discover Eramarindo</a>
+    </section>
+
+    <section id="about">
+      <div class="section-label">Who We Are</div>
+      <h2>A Strategic Partner for Sustainable Growth</h2>
+      <p class="intro">
+        Eramarindo Corporation, under PT. Eramarindo Anugerah Pratama,
+        is positioned as an Indonesian holding company focused on
+        strategic partnerships, investment initiatives, project
+        management, and asset management. Our approach supports
+        the investment lifecycle — from opportunity origination
+        and feasibility through development, operations, and
+        long-term asset management.
+      </p>
+    </section>
+
+    <section class="portfolio" id="business">
+      <div class="section-label">Business Portfolio</div>
+      <h2>Integrated Business Sectors</h2>
+      <p class="intro">
+        An integrated portfolio framework designed to support
+        strategic opportunities across Indonesia's key sectors.
+      </p>
+
+      <div class="grid">
+        <article class="item">
+          <h3>Energy & Oil Gas</h3>
+          <p>Energy development and oil & gas strategic initiatives.</p>
+        </article>
+        <article class="item">
+          <h3>Mining & Minerals</h3>
+          <p>Mineral resources and responsible development opportunities.</p>
+        </article>
+        <article class="item">
+          <h3>Food Estate & Agro</h3>
+          <p>Agriculture, food systems, and integrated agribusiness.</p>
+        </article>
+        <article class="item">
+          <h3>EPCIC</h3>
+          <p>Engineering, procurement, construction, installation, and commissioning.</p>
+        </article>
+        <article class="item">
+          <h3>Logistics & Shipping</h3>
+          <p>Logistics infrastructure and maritime connectivity.</p>
+        </article>
+        <article class="item">
+          <h3>KEK & Property</h3>
+          <p>Special economic zones and strategic property development.</p>
+        </article>
+        <article class="item">
+          <h3>Digital & Command System</h3>
+          <p>Digital infrastructure, technology, and integrated systems.</p>
+        </article>
+        <article class="item">
+          <h3>Blue Economy</h3>
+          <p>Marine resources and sustainable ocean-based opportunities.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="investment">
+      <div class="section-label">Investment & Partnership</div>
+      <h2>Connecting Capital with Strategic Opportunities</h2>
+      <p class="intro">
+        We seek to facilitate strategic collaboration between
+        domestic and foreign investors, project owners, institutions,
+        and business partners. Each opportunity is subject to
+        feasibility assessment, due diligence, risk evaluation,
+        and applicable regulatory requirements.
+      </p>
+    </section>
+
+    <section id="governance" class="portfolio">
+      <div class="section-label">Our Principles</div>
+      <h2>Governance. Integrity. Execution.</h2>
+      <div class="principles">
+        <div><strong>Commitment</strong>Responsible commitment to agreed objectives.</div>
+        <div><strong>Excellent</strong>Professional standards and continuous improvement.</div>
+        <div><strong>Trusted</strong>Integrity, transparency, and accountability.</div>
+        <div><strong>Initiative</strong>Proactive thinking and responsible execution.</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-label">Connect With Us</div>
+      <h2>Let's Build Strategic Partnerships</h2>
+      <p class="intro">
+        For corporate enquiries, investment discussions, and
+        strategic collaboration, please contact our corporate office.
+      </p>
+      <p style="margin-top:25px;color:#c6a45c;">
+        PT. ERAMARINDO ANUGERAH PRATAMA
+      </p>
+      <p style="color:#aaa;font-size:13px;">
+        Official corporate contact details will be published
+        after verification.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> Eramarindo Corporation. All rights reserved.</span>
+    <span>Sovereign – Powerful – Global</span>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
