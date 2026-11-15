@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="EmAP Financial Governance & Finance Management Learning Center">
+<title>EmAP | Financial Governance Learning Center</title>
+<style>
+:root{--navy:#061833;--blue:#1679e8;--cyan:#22c8e8;--gold:#d8b46b;--ink:#172840;--muted:#718198;--line:#e4ebf4;--paper:#f4f7fb}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 Arial,sans-serif}
+header{background:linear-gradient(120deg,#061833,#123c70);color:white;padding:26px max(5vw,20px)}
+header .brand{color:var(--gold);font-weight:800;letter-spacing:2px;font-size:13px}
+h1{font-size:clamp(27px,4vw,42px);line-height:1.1;margin:12px 0}header p{color:#dce8f6;max-width:800px;margin:0}
+main{max-width:1100px;margin:28px auto;padding:0 18px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.stat,.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 6px 24px #102d5010}
+.stat b{display:block;color:var(--navy);font-size:25px}.stat span{font-size:12px;color:var(--muted)}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}.toolbar button,.actions button{border:0;border-radius:10px;padding:11px 15px;font-weight:700;cursor:pointer;background:#e8eef6;color:var(--navy)}
+button.primary{background:var(--blue);color:white}button.gold{background:var(--gold);color:#18283c}
+.panel h2{margin:0 0 12px;color:var(--navy)}.meta{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:10px}
+.progress{height:7px;background:#e8eef6;border-radius:9px;overflow:hidden;margin:12px 0 20px}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));width:0}
+.card{min-height:235px;border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(145deg,#fff,#f8fbff);cursor:pointer}
+.card small{color:var(--blue);font-weight:800;letter-spacing:1px;text-transform:uppercase}.card h3{font-size:clamp(21px,3vw,30px);margin:16px 0;color:var(--navy)}.card p{font-size:18px;margin:0}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.muted{color:var(--muted);font-size:13px}
+.quiz-option{display:block;width:100%;text-align:left;padding:13px;margin:8px 0;border:1px solid var(--line);border-radius:10px;background:white;cursor:pointer}.quiz-option:hover{border-color:var(--blue)}
+footer{text-align:center;padding:30px;color:var(--muted);font-size:12px}
+@media(max-width:600px){.stats{grid-template-columns:1fr 1fr}.stats .stat:last-child{grid-column:span 2}.card{min-height:210px}}
+</style></head>
+<body><header><div class="brand">ERAMARINDO CORPORATION • EmAP</div><h1>Financial Governance<br>& Finance Management</h1><p>Learning Center • Flashcard & Assessment • White Orchid Culture • Golden RE People • 4SBO • AVODAH</p></header>
+<main><div class="stats"><div class="stat"><b id="total">32</b><span>Kartu pembelajaran pada edisi ini</span></div><div class="stat"><b id="position">1 / 32</b><span>Posisi belajar</span></div><div class="stat"><b id="score">0</b><span>Jawaban benar pada sesi kuis</span></div></div>
+<div class="toolbar"><button class="primary" id="studyBtn">Mode Flashcard</button><button id="quizBtn">Mode Kuis</button><button id="shuffleBtn">Acak Kartu</button><button id="resetBtn">Mulai Ulang</button></div>
+<section class="panel" id="study"><div class="meta"><span id="category">FINANCIAL GOVERNANCE</span><span id="counter">Kartu 1 dari 32</span></div><div class="progress"><i id="bar"></i></div><div class="card" id="flash" tabindex="0" role="button" aria-label="Balik kartu"><small id="side">PERTANYAAN • KLIK UNTUK MEMBALIK</small><h3 id="front"></h3><p id="back" hidden></p></div><div class="actions"><button id="prev">← Sebelumnya</button><button class="primary" id="flip">Lihat Jawaban</button><button id="next">Berikutnya →</button><button class="gold" id="known">Saya Paham ✓</button><button id="review">Perlu Diulang ↻</button></div><p class="muted" id="mark">Status kartu: belum ditandai. Penandaan berlaku pada sesi browser ini.</p></section>
+<section class="panel" id="quiz" hidden><div class="meta"><span>ASSESSMENT • PILIH SATU JAWABAN</span><span id="qcounter">Pertanyaan 1</span></div><div class="progress"><i id="qbar"></i></div><h2 id="question"></h2><div id="options"></div><p id="feedback" aria-live="polite"></p><div class="actions"><button class="primary" id="nextQ" disabled>Berikutnya →</button><button id="restartQ">Ulangi Kuis</button></div></section>
+<p class="muted" style="margin:16px 2px">Catatan: edisi web ini adalah paket belajar mandiri. Nilai dan status belajar tersimpan hanya selama sesi halaman aktif; belum tersinkron ke HRIS, Supabase, atau Trinity Learning Grid.</p></main><footer>© Eramarindo Corporation • Financial Governance Learning Center</footer>
+<script>
+const cards=[
+["Financial Governance","Apa tujuan utama Financial Governance?","Memastikan keuangan dikelola transparan, tertib, aman, dan bertanggung jawab."],
+["Financial Governance","Siapa yang bertanggung jawab menjaga keuangan perusahaan?","Seluruh Insan Eramarindo sesuai kewenangan dan tanggung jawabnya."],
+["Financial Governance","Apa arti integritas keuangan?","Jujur, tidak memanipulasi, dan bertanggung jawab atas setiap transaksi."],
+["Financial Governance","Bolehkah menggunakan uang perusahaan untuk kepentingan pribadi?","Tidak boleh tanpa dasar dan persetujuan resmi yang sah."],
+["Finance","Apa fungsi utama departemen Finance?","Mengelola transaksi keuangan, pembayaran, penerimaan, dan posisi keuangan."],
+["Accounting","Apa fungsi utama Accounting?","Mencatat, mengklasifikasikan, merekonsiliasi, dan menyajikan transaksi keuangan."],
+["Tax","Apa fungsi utama Tax Department?","Mengelola kewajiban perpajakan dan memastikan kepatuhan pajak."],
+["Budgeting","Apa fungsi utama Budgeting Department?","Menyusun, mengendalikan, dan mengevaluasi anggaran perusahaan."],
+["Treasury","Apa fungsi utama Treasury Department?","Mengelola likuiditas, pendanaan, arus kas, dan risiko keuangan."],
+["Cash Management","Apa fungsi Cash Management?","Memastikan ketersediaan dan pengendalian kas secara aman."],
+["Budgeting","Apa yang dimaksud anggaran perusahaan?","Rencana keuangan untuk mendukung kegiatan dan target perusahaan."],
+["Financial Governance","Mengapa setiap pengeluaran membutuhkan bukti?","Agar dapat diverifikasi, dipertanggungjawabkan, dan diaudit."],
+["Financial Governance","Apa arti transparansi keuangan?","Informasi keuangan disampaikan secara benar dan dapat ditelusuri."],
+["Financial Governance","Apa arti akuntabilitas?","Kesediaan mempertanggungjawabkan keputusan dan penggunaan sumber daya."],
+["Risk & Fraud","Apa itu financial fraud?","Tindakan penipuan atau manipulasi untuk memperoleh keuntungan tidak sah."],
+["Budgeting","Apa contoh penyalahgunaan anggaran?","Mengalihkan dana dari tujuan yang disetujui tanpa otorisasi."],
+["Internal Control","Mengapa pemisahan tugas diperlukan?","Mengurangi kesalahan, konflik kepentingan, dan peluang kecurangan."],
+["Internal Control","Apa arti segregation of duties?","Pemisahan fungsi persetujuan, pelaksanaan, pencatatan, dan pemeriksaan."],
+["Internal Control","Siapa yang boleh menyetujui pembayaran?","Pejabat yang memiliki kewenangan sesuai matriks otorisasi."],
+["Internal Control","Apa yang dimaksud approval matrix?","Dokumen yang mengatur batas kewenangan persetujuan."],
+["Internal Control","Bolehkah pegawai menyetujui transaksi sendiri tanpa kontrol?","Tidak, transaksi harus mengikuti pemisahan kewenangan yang berlaku."],
+["SOP","Apa fungsi SOP keuangan?","Menstandarkan proses agar konsisten, terkendali, dan dapat diaudit."],
+["Risk & Fraud","Apa yang harus dilakukan saat menemukan transaksi mencurigakan?","Hentikan proses sesuai kewenangan dan laporkan melalui jalur resmi."],
+["Confidentiality","Apa arti confidentiality dalam keuangan?","Menjaga informasi keuangan agar hanya diakses pihak berwenang."],
+["Confidentiality","Bolehkah membagikan rekening perusahaan kepada pihak luar?","Tidak tanpa izin dan prosedur pengamanan resmi."],
+["Audit","Apa yang dimaksud audit trail?","Jejak dokumentasi yang menunjukkan riwayat suatu transaksi."],
+["Records","Mengapa dokumen transaksi harus disimpan?","Untuk bukti, pemeriksaan, rekonsiliasi, dan kepatuhan."],
+["Accounting","Apa fungsi invoice?","Dokumen tagihan atas barang atau jasa yang diberikan."],
+["Procurement","Apa fungsi purchase order?","Dokumen resmi pemesanan barang atau jasa."],
+["Procurement","Apa fungsi goods receipt?","Membuktikan barang telah diterima sesuai pemeriksaan."],
+["Risk Management","Bagaimana hubungan Financial Governance dengan Risk Management?","Financial Governance mengendalikan keuangan; Risk Management mengidentifikasi dan mengendalikan ancaman terhadap tujuan."],
+["Risk Management","Siapa bertanggung jawab mengelola risiko di Eramarindo?","Setiap insan mengenali dan melaporkan risiko; pemilik proses menjalankan kontrol sesuai kewenangan."]
+];
+let order=cards.map((_,i)=>i),idx=0,flipped=false,marks={},quizSet=[],qi=0,score=0,answered=false;
+const $=id=>document.getElementById(id);
+function render(){const c=cards[order[idx]];$("category").textContent=c[0].toUpperCase();$("front").textContent=c[1];$("back").textContent=c[2];$("back").hidden=!flipped;$("side").textContent=flipped?"JAWABAN • KLIK UNTUK KEMBALI":"PERTANYAAN • KLIK UNTUK MEMBALIK";$("flip").textContent=flipped?"Lihat Pertanyaan":"Lihat Jawaban";$("counter").textContent="Kartu "+(idx+1)+" dari "+order.length;$("position").textContent=(idx+1)+" / "+order.length;$("bar").style.width=((idx+1)/order.length*100)+"%";$("mark").textContent="Status kartu: "+(marks[order[idx]]||"belum ditandai")+". Penandaan berlaku pada sesi browser ini."}
+function flip(){flipped=!flipped;render()}function move(d){idx=(idx+d+order.length)%order.length;flipped=false;render()}
+$("flash").onclick=flip;$("flash").onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();flip()}};$("flip").onclick=flip;$("prev").onclick=()=>move(-1);$("next").onclick=()=>move(1);$("known").onclick=()=>{marks[order[idx]]="dipahami";render()};$("review").onclick=()=>{marks[order[idx]]="perlu diulang";render()};
+$("shuffleBtn").onclick=()=>{for(let i=order.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]]}idx=0;flipped=false;render()};
+$("resetBtn").onclick=()=>{order=cards.map((_,i)=>i);idx=0;flipped=false;marks={};render()};
+function mode(q){$("study").hidden=q;$("quiz").hidden=!q;$("studyBtn").classList.toggle("primary",!q);$("quizBtn").classList.toggle("primary",q)}$("studyBtn").onclick=()=>mode(false);$("quizBtn").onclick=()=>{mode(true);startQuiz()};
+function startQuiz(){quizSet=[...cards.keys()].sort(()=>Math.random()-.5).slice(0,10);qi=0;score=0;$("score").textContent=score;showQ()}
+function showQ(){answered=false;const c=cards[quizSet[qi]];$("qcounter").textContent="Pertanyaan "+(qi+1)+" dari "+quizSet.length;$("qbar").style.width=(qi/quizSet.length*100)+"%";$("question").textContent=c[1];$("feedback").textContent="";$("nextQ").disabled=true;$("nextQ").textContent=qi===quizSet.length-1?"Lihat Hasil":"Berikutnya →";const wrong=cards.filter((_,i)=>i!==quizSet[qi]).sort(()=>Math.random()-.5).slice(0,3).map(x=>x[2]);const opts=[c[2],...wrong].sort(()=>Math.random()-.5);$("options").innerHTML="";opts.forEach(o=>{const b=document.createElement("button");b.className="quiz-option";b.textContent=o;b.onclick=()=>answer(b,o===c[2]);$("options").appendChild(b)})}
+function answer(btn,ok){if(answered)return;answered=true;if(ok){score++;$("feedback").textContent="Benar. "+cards[quizSet[qi]][2]}else $("feedback").textContent="Belum tepat. Jawaban benar: "+cards[quizSet[qi]][2];$("score").textContent=score;[...$("options").children].forEach(b=>{b.disabled=true;if(b.textContent===cards[quizSet[qi]][2])b.style.borderColor="#15945b"});$("nextQ").disabled=false}
+$("nextQ").onclick=()=>{if(!answered)return;if(qi<quizSet.length-1){qi++;showQ()}else{$("question").textContent="Hasil kuis: "+score+" dari "+quizSet.length;$("options").innerHTML="";$("feedback").textContent=score>=8?"Sangat baik. Terus pertahankan pemahaman.":"Ulangi flashcard untuk memperkuat pemahaman."; $("nextQ").disabled=true;$("qbar").style.width="100%"}};
+$("restartQ").onclick=startQuiz;render();
+</script></body></html>
